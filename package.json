@@ -1,0 +1,22 @@
+{
+  "name": "native",
+  "version": "1.0.0",
+  "description": "This repo is intended for exploring the pre built functions and objects of Node JS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biswasray/node-native.git"
+  },
+  "keywords": [
+    "native"
+  ],
+  "author": "Subhasish Biswasray",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/biswasray/node-native/issues"
+  },
+  "homepage": "https://github.com/biswasray/node-native#readme"
+}
