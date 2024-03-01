@@ -5,8 +5,8 @@ process.on("message", (message, sendHandler) => {
   console.log("Recieved by:", sendHandler);
 });
 
-if (typeof process.send === "function") {
-  process.send("Hello world", "Alien");
-} else {
-  process.emit("message", "Hello world", "Alien");
-}
+// if (typeof process.send === "function") {
+//   process.send("Hello world1", "Alien");
+// } else {
+//   process.emit("message", "Hello world2", "Alien");
+// }

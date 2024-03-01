@@ -1,19 +1,19 @@
-import process from 'node:process';
+// a.js
+const process = require('node:process');
 
-// Begin reading from stdin so the process does not exit.
+console.log("Hello from a.js!");
+
+// process.on('SIGINT', () => {
+//   console.log('Received SIGINT. Press Control-D to exit.');
+//   process.exit(1);
+// });
 process.stdin.resume();
-
-process.on('SIGINT', () => {
-  console.log('Received SIGINT. Press Control-D to exit.');
-  process.exit(1);
-});
 
 // Using a single function to handle multiple signals
 function handle(signal) {
   console.log(`Received ${signal}`);
 }
 
-console.log("kqwwqx");
 process.on('SIGINT', handle);
 process.on('SIGTERM', handle);
 process.on("SIGKILL",handle);
