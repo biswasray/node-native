@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is Prime</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Set container height to viewport height */
+          }
+          
+          .textbox {
+            margin: 0 5px; /* Adjust as needed */
+          }
+          
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="textbox">
+          <input type="text" id="num1" placeholder="Enter a number to check prime">
+          <button onclick="check1()">Check</button>
+          <p id="check1"></p>
+        </div>
+        <div class="textbox">
+          <input type="number" id="num2" placeholder="Enter a number to check prime">
+          <button onclick="check2()">Check</button>
+          <p id="check2"></p>
+        </div>
+      </div>
+      <!-- <script type="module" src="sss.js"></script> -->
+      <script type="module" src="ttt.js"></script>
+      <!-- <script src="script.js"></script> -->
+      <script>
+        function isPrime(num) {
+            return new Promise((resolve,reject)=>{
+                if(num<2) {
+                    return resolve(false);
+                }
+                let i, flag = true;
+                for (i = 2; i <= num - 1; i++) {
+                    if (num % i == 0) {
+                        flag = false;
+                        break;
+                    }
+                }
+                return resolve(flag);
+            });
+        }        
+        function check1() {
+            const num = document.getElementById("num1").value;
+            const p = document.getElementById("check1");
+            isPrime(num).then((res)=>p.innerText=res?"Prime":"Not prime");
+        }
+        function check2() {
+            const num = document.getElementById("num2").value;
+            const p = document.getElementById("check2");
+            isPrime(num).then((res)=>p.innerText=res?"Prime":"Not prime");
+        }
+      </script>
+</body>
+</html>
